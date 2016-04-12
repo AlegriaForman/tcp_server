@@ -1,0 +1,32 @@
+{
+  "name": "tcp_server",
+  "version": "1.0.0",
+  "description": "tcp_server assignment",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlegriaForman/tcp_server.git"
+  },
+  "author": "Ali Forman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlegriaForman/tcp_server/issues"
+  },
+  "homepage": "https://github.com/AlegriaForman/tcp_server#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gen-id": "^0.1.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5",
+    "moment": "^2.12.0"
+  }
+}
