@@ -9,7 +9,7 @@ const current = moment();
 net.createServer((socket) => {
   socket.on('data', (data) => {
     var timeanddateStamp = current.format('MM-DD-YYYY HH:mm:ss');
-    fs.writeFile('TCP Request ' + orderId + ' ' + timeanddateStamp, (err, data) => {
+    fs.writeFile('TCP Request ' + orderId + ' ' + timeanddateStamp, data, (err) => {
       if (err) return 'Error.';
     });
   });
@@ -20,3 +20,5 @@ net.createServer((socket) => {
 console.log('Server ready on ' + port + '!');
 
 module.exports = exports;
+
+console.log();
