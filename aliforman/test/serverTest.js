@@ -2,10 +2,12 @@ const expect = require('chai').expect;
 const net = require('net');
 const fs = require('fs');
 require(__dirname + '/../server.js');
+var currentFileList;
 
 describe('Current file lists:', () => {
   before(() => {
     fs.readdir('./', (err, files) => {
+      currentFileList = files.length;
       if (err) return 'Error has occurred.';
       console.log(files);
     });
@@ -17,11 +19,13 @@ describe('Current file lists:', () => {
       done();
     });
   });
-  it('Check if files param are same as file list', (done) => {
-    fs.readdir('./', (err, files) => {
-      if (err) return 'Error has occurred.';
-      var fileList = files.length;
-      expect(files === fileList + 1).to.eql(true);
+  it('Check if files are same as currentFileList ', (done) => {
+    after(() => {
+      fs.readdir('./', (err, files) => {
+        if (err) return 'Error has occurred.';
+        console.log(files);
+        expect(files.length).to.eql(currentFileList + 1);
+      });
     });
     done();
   });
